@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <title>Pequeños Gigantes</title>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h4 style="text-align: center">Colegio Pequeños Gigantes</h4>
+                    <h:form>
+                        <h:inputText  value="#{calcularSession.objOp.numHijos}" id="hijos" style="padding-top: 10px" class="validate"/>
+                        <label for="hijos">Número de Hijos</label>
+
+                        <h:inputText  value="#{calcularSession.objOp.precioMatri}" id="matricula" style="padding-top: 10px" class="validate"/>
+                        <label for="matricula">Precio Matricula por niño</label>
+
+                        <h:inputText  value="#{calcularSession.objOp.precioMensua}" id="mensualidad" style="padding-top: 10px" class="validate"/>
+                        <label for="mensualidad">Precio Mensualidad por niño</label>
+
+                        <h:inputText  value="#{calcularSession.objOp.precioSociedad}" id="sociedad" style="padding-top: 10px" class="validate"/>
+                        <label for="sociedad">Precio Sociedad de padres</label>
+
+                        <div style="padding-top: 25px" class="row">
+                            <h:commandButton action="#{calcularSession.resultadoPagarSin()}" style="font-size: 25px; margin-left: 210px;" value="Calcular Sin Descuento" />
+                        </div>
+
+                        <h:inputText  value="#{calcularSession.objOp.totalPagar}" id="pagarSin" style="padding-top: 10px; text-align: center" />
+                        <label for="pagarSin">MONTO A PAGAR POR INSCRIPCIÓN SIN DESCUENTO X NIÑO</label>
+
+                        <div style="padding-top: 25px" class="row">
+                            <h:commandButton action="#{calcularSession.resultadoPagarCon()}" style="font-size: 25px; margin-left: 210px;" value="Calcular Con Descuento" />
+                        </div>
+
+                        <h:inputText  value="#{calcularSession.objOp.totalDescuento}" id="pagarCon" style="padding-top: 10px; text-align: center" />
+                        <label for="pagarCon">MONTO A PAGAR POR INSCRIPCIÓN CON DESCUENTO X NIÑO</label>
+
+
+                    </h:form>
+                </div>
+            </div>
+
+        </div>
+
+    </h:body>
+</html>
